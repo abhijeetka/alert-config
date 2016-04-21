@@ -1,3 +1,9 @@
+global:
+  # The smarthost and SMTP sender used for mail notifications.
+  smtp_smarthost: 'smtp.mandrillapp.com:25'
+  smtp_from: 'alert@alertnamager.com'
+  smtp_auth_username: 'jefrycruz88@gmail.com'
+  smtp_auth_password: 'w3-onjLmxEdpZm5BFtJRUQ'
 route:
   receiver: email-alert
   group_by: ['alertname', 'cluster']
@@ -6,6 +12,6 @@ route:
   repeat_interval: 5s
 
 receivers:
-  - name: sms_team1
+  - name: email-alert
     email_configs:
       - to: 'abhijeetka@cybage.com'
